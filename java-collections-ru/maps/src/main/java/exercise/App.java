@@ -8,22 +8,25 @@ public class App {
     public static Map<String, Integer> getWordCount(String sentence) {
         String[] words = sentence.split(" ");
         Map<String, Integer> result = new HashMap<>();
-        if (words.length == 0) {
-            return result;
-        }
         for (String word: words) {
             result.put(word, getCount(word, words));
         }
-        System.out.println(result);
+        if (sentence.equals("")) {
+            result.clear();
+        }
         return result;
     }
 
     public static String toString(Map<String, Integer> wordCount) {
-        String start = "{\n";
-        String result = "  ";
-        for (String key: wordCount.keySet()) {
-            result = result + key + ": " + wordCount.get(key) + "\n";
+        if (wordCount.isEmpty()) {
+            return "{}";
         }
+        String start = "{\n";
+        String result = "";
+        for (String key: wordCount.keySet()) {
+            result = result + "  " + key + ": " + wordCount.get(key) + "\n";
+        }
+        System.out.println(start + result + "}");
         return start + result + "}";
     }
 
