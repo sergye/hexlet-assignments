@@ -12,7 +12,6 @@ public class App {
                 .filter(param -> param.startsWith("environment"))
                 .map(line -> line.replaceAll("environment=", ""))
                 .map(line -> line.replace("\"", ""))
-                .map(line -> line.replace(" ", ""))
                 .flatMap(line -> Stream.of(line.split(",")))
                 .filter(param -> param.startsWith("X_FORWARDED_"))
                 .map(line -> line.replace("X_FORWARDED_", ""))
