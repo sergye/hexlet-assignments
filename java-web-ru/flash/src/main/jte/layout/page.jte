@@ -1,5 +1,4 @@
-<!-- BEGIN -->
-@import exercise.util.NamedRoutes
+
 @import exercise.dto.BasePage
 @import gg.jte.Content
 @param Content content
@@ -22,4 +21,4 @@
         ${content}
     </body>
 </html>
-<!-- END -->
+

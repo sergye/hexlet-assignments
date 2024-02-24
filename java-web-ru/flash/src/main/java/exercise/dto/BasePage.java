@@ -8,9 +8,6 @@ import lombok.Setter;
 @Setter
 public class BasePage {
     private String flash;
-
-    public BasePage(String flash) {
-        this.flash = flash;
-    }
+    private String flashType;
 }
 // END
