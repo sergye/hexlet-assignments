@@ -52,9 +52,7 @@ public class Application {
         var post = posts.stream()
                 .filter(p -> p.getId().equals(id))
                 .findFirst();
-        return ResponseEntity
-                .status(post.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK)
-                .body(post.orElse(null));
+        return ResponseEntity.of(post);
     }
 
     @PutMapping("/posts/{id}") // Обновление страницы
