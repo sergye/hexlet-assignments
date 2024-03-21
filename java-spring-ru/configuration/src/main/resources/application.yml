@@ -1,11 +1,11 @@
 ---
 # BEGIN
 spring:
-  server:
-    port: 7070
   output:
     ansi:
       enabled: always
+server:
+  port: 7070
 # END
 
 users:
