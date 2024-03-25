@@ -23,8 +23,8 @@ public class ProductsController {
 
     // BEGIN
     @GetMapping(path = "")
-    public List<Product> index(@RequestParam(required = false, defaultValue = "0") Integer min,
-                               @RequestParam(required = false, defaultValue = "1000") Integer max) {
+    public List<Product> index(@RequestParam(defaultValue = Integer.MIN_VALUE + "") Integer min,
+                               @RequestParam(defaultValue = Integer.MAX_VALUE + "") Integer max) {
         return productRepository.findByPriceBetweenOrderByPrice(min, max);
     }
     // END
