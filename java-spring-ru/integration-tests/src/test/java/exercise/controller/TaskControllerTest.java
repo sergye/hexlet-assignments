@@ -1,29 +1,25 @@
 package exercise.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import exercise.exception.ResourceNotFoundException;
-import org.junit.jupiter.api.Test;
-import static net.javacrumbs.jsonunit.assertj.JsonAssertions.assertThatJson;
-import static org.assertj.core.api.Assertions.assertThat;
+import exercise.model.Task;
+import exercise.repository.TaskRepository;
+import net.datafaker.Faker;
 import org.instancio.Instancio;
 import org.instancio.Select;
-
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 
 import java.util.HashMap;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import net.datafaker.Faker;
-import exercise.repository.TaskRepository;
-import exercise.model.Task;
+
+import static net.javacrumbs.jsonunit.assertj.JsonAssertions.assertThatJson;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 // BEGIN
 @SpringBootTest
