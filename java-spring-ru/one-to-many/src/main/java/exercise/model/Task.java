@@ -1,5 +1,6 @@
 package exercise.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.FetchType;
@@ -41,6 +42,7 @@ public class Task {
     private LocalDate updatedAt;
 
     // BEGIN
+    @JsonIgnore
     @ManyToOne(optional = false)
     private User assignee;
     // END
