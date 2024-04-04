@@ -68,11 +68,7 @@ public class ProductsController {
         var product = productRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Not Found: " + id));
 
-        var category =  categoryRepository.findById(productData.getCategoryId().get())
-                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
-
         productMapper.update(productData, product);
-        product.setCategory(category);
         productRepository.save(product);
 
         return productMapper.map(product);
