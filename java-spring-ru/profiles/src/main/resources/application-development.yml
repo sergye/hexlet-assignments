@@ -1,0 +1,13 @@
+# BEGIN
+spring:
+  datasource:
+    url: "jdbc:h2:mem:test"
+    username: sa
+    password: 123
+    generate-unique-name: false
+
+    h2:
+      console:
+        enabled: true
+        settings.web-allow-others: true
+# END
